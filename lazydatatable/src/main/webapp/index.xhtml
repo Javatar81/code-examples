@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<ui:composition xmlns:f="http://java.sun.com/jsf/core"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+	<h:head>
+	</h:head>
+	<h:body styleClass="login">
+		<h:form id="form">
+			<p:dataTable var="user" value="#{userBean.users}"
+				paginator="true" rows="10" sortMode="multiple"
+				paginatorTemplate="{RowsPerPageDropdown} {FirstPageLink} {PreviousPageLink} {CurrentPageReport} {NextPageLink} {LastPageLink}"
+				rowsPerPageTemplate="5,10,15" selectionMode="single" id="userTable" lazy="true">
+				<p:column headerText="Id" sortBy="#{user.id}" filterBy="#{user.id}">
+					<h:outputText value="#{user.id}" />
+				</p:column>
+				<p:column headerText="Login" sortBy="#{user.login}" filterBy="#{user.login}">
+					<h:outputText value="#{user.login}" />
+				</p:column>
+				<p:column headerText="Firstname" sortBy="#{user.firstName}" filterBy="#{user.firstName}">
+					<h:outputText value="#{user.firstName}" />
+				</p:column>
+				<p:column headerText="Lastname" sortBy="#{user.lastName}" filterBy="#{user.lastName}">
+					<h:outputText value="#{user.lastName}" />
+				</p:column>
+				<p:column headerText="DayOfBirth" sortBy="#{user.dayOfBirth}" filterBy="#{user.dayOfBirth}">
+					<h:outputText value="#{user.dayOfBirth}" />
+				</p:column>
+				<p:column headerText="Manager" sortBy="#{user.manager.lastName}" filterBy="#{user.manager.lastName}">
+					<h:outputText value="#{user.manager.lastName}" />
+				</p:column>
+			</p:dataTable>
+		</h:form>
+	</h:body>
+</ui:composition>

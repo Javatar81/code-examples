@@ -12,7 +12,7 @@ import javax.validation.Payload;
 import de.javatar81.examples.validators.SpELParameterValidator;
 
 @Constraint(validatedBy = SpELParameterValidator.class)
-@Target({ ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.ANNOTATION_TYPE })
+@Target({ ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface ValidateParametersExpression {
@@ -21,7 +21,7 @@ public @interface ValidateParametersExpression {
 
 	Class<?>[]groups() default {};
 
-	Class<? extends Payload>[]payload() default {};
+	Class<? extends Payload>[] payload() default {};
 
 	String value();
 }

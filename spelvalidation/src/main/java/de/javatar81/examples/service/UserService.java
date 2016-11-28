@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.annotation.Validated;
 
-import de.javatar81.examples.annotations.ValidDates;
+import de.javatar81.examples.annotations.ValidDateRange;
 import de.javatar81.examples.annotations.ValidateParametersExpression;
 import de.javatar81.examples.domain.User;
 
@@ -26,8 +26,8 @@ public class UserService {
 	}
 
 	@ValidateParametersExpression("#arg0.isBefore(#arg1)")
-	@ValidDates
-	public Collection<User> findUser(LocalDateTime from, LocalDateTime until) {
+	@ValidDateRange
+	public Collection<User> findUserByDateOfBirth(LocalDateTime from, LocalDateTime until) {
 		// Implement findUser logic here
 		return Collections.emptyList();
 	}

@@ -8,10 +8,12 @@ import de.javatar81.examples.domain.User;
 
 public class UsernameValidator implements ConstraintValidator<ValidUsername, User> {
 
+	@Override
 	public void initialize(ValidUsername constraintAnnotation) {
 
 	}
-
+	
+	@Override
 	public boolean isValid(User user, ConstraintValidatorContext context) {
 		return !(user.getLogin() == null && user.getEmail() == null);
 	}

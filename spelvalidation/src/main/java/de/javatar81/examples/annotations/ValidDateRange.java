@@ -9,13 +9,13 @@ import java.lang.annotation.Target;
 import javax.validation.Constraint;
 import javax.validation.Payload;
 
-import de.javatar81.examples.validators.DatesValidator;
+import de.javatar81.examples.validators.DateRangeValidator;
 
-@Target({ ElementType.METHOD, ElementType.CONSTRUCTOR, ElementType.ANNOTATION_TYPE })
+@Target({ ElementType.METHOD, ElementType.CONSTRUCTOR})
 @Retention(RetentionPolicy.RUNTIME)
-@Constraint(validatedBy = { DatesValidator.class })
+@Constraint(validatedBy = { DateRangeValidator.class })
 @Documented
-public @interface ValidDates {
+public @interface ValidDateRange {
 	String message() default "{dates.validation.message}";
 
 	Class<?>[]groups() default {};

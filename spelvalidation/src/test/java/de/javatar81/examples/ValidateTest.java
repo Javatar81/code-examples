@@ -137,10 +137,10 @@ public class ValidateTest {
 	@Test
 	public void testValidateFindUser() {
 		// Valid date range
-		userService.findUser(LocalDateTime.now().minusHours(5), LocalDateTime.now());
+		userService.findUserByDateOfBirth(LocalDateTime.now().minusHours(5), LocalDateTime.now());
 		// Invalid date range
 		try {
-			userService.findUser(LocalDateTime.now().plusHours(5), LocalDateTime.now());
+			userService.findUserByDateOfBirth(LocalDateTime.now().plusHours(5), LocalDateTime.now());
 			fail("ConstraintViolationException expected");
 		} catch (ConstraintViolationException e) {
 			// @ValidateParametersExpression and @ValidDates fail

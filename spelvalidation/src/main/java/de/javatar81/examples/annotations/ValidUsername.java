@@ -11,7 +11,7 @@ import javax.validation.Payload;
 
 import de.javatar81.examples.validators.UsernameValidator;
 
-@Target({ ElementType.TYPE, ElementType.ANNOTATION_TYPE })
+@Target({ ElementType.TYPE})
 @Retention(RetentionPolicy.RUNTIME)
 @Constraint(validatedBy = { UsernameValidator.class })
 @Documented
@@ -20,6 +20,6 @@ public @interface ValidUsername {
 
 	Class<?>[]groups() default {};
 
-	Class<? extends Payload>[]payload() default {};
+	Class<? extends Payload>[] payload() default {};
 
 }

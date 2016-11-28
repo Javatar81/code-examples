@@ -7,12 +7,12 @@ import javax.validation.ConstraintValidatorContext;
 import javax.validation.constraintvalidation.SupportedValidationTarget;
 import javax.validation.constraintvalidation.ValidationTarget;
 
-import de.javatar81.examples.annotations.ValidDates;
+import de.javatar81.examples.annotations.ValidDateRange;
 
 @SupportedValidationTarget(ValidationTarget.PARAMETERS)
-public class DatesValidator implements ConstraintValidator<ValidDates, Object[]> {
+public class DateRangeValidator implements ConstraintValidator<ValidDateRange, Object[]> {
 
-	public void initialize(ValidDates constraintAnnotation) {
+	public void initialize(ValidDateRange constraintAnnotation) {
 
 	}
 
